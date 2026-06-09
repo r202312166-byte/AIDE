@@ -1,0 +1,32 @@
+{
+  "Math": [
+    {
+      "type": "import",
+      "text": "Import math",
+      "content": "import math",
+      "template": "import math",
+      "description": "Import the math module"
+    },
+    {
+      "type": "function",
+      "text": "math.sqrt",
+      "content": "math.sqrt({x})",
+      "template": "math.sqrt({x})",
+      "description": "Calculate square root"
+    },
+    {
+      "type": "function",
+      "text": "math.sin",
+      "content": "math.sin({angle})",
+      "template": "math.sin({angle})",
+      "description": "Calculate sine"
+    },
+    {
+      "type": "function",
+      "text": "math.cos",
+      "content": "math.cos({angle})",
+      "template": "math.cos({angle})",
+      "description": "Calculate cosine"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Common": [
+    {
+      "type": "statement",
+      "text": "Comment",
+      "content": "# Comment",
+      "template": "# {comment}",
+      "description": "Add a comment"
+    },
+    {
+      "type": "statement",
+      "text": "TODO",
+      "content": "# TODO: ",
+      "template": "# TODO: {task}",
+      "description": "Add a TODO comment"
+    }
+  ]
+}

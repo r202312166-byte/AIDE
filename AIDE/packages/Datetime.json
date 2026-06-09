@@ -1,0 +1,25 @@
+{
+  "Datetime": [
+    {
+      "type": "import",
+      "text": "Import datetime",
+      "content": "import datetime",
+      "template": "import datetime",
+      "description": "Import the datetime module"
+    },
+    {
+      "type": "function",
+      "text": "datetime.now",
+      "content": "datetime.datetime.now()",
+      "template": "datetime.datetime.now()",
+      "description": "Get current date and time"
+    },
+    {
+      "type": "function",
+      "text": "strftime",
+      "content": "datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")",
+      "template": ".strftime(\"%Y-%m-%d %H:%M:%S\")",
+      "description": "Format date as string"
+    }
+  ]
+}

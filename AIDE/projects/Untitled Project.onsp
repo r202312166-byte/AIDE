@@ -1,0 +1,27 @@
+{
+  "project_name": "Untitled Project",
+  "blocks": {
+    "block_0": {
+      "id": "block_0",
+      "type": "code_pack",
+      "x": 380.0,
+      "y": 440.0,
+      "width": 120,
+      "height": 60,
+      "text": "Code Pack",
+      "content": "# \u4ee3\u7801\u5305\u5185\u5bb9\n# \u53cc\u51fb\u6b64\u5757\uff0c\u7136\u540e\u70b9\u51fb'\u66f4\u6539\u5185\u5bb9'\u6309\u94ae\u9009\u62e9.txt\u6587\u4ef6",
+      "color": "#8E44AD",
+      "connections": [],
+      "continue_connection": null,
+      "prev_connections": [],
+      "end_connection": null,
+      "is_code_pack": true,
+      "pack_version": "1.0"
+    }
+  },
+  "block_counter": 1,
+  "sequence_lines": [],
+  "end_lines": [],
+  "continue_lines": [],
+  "polyline_points": {}
+}

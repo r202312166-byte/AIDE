@@ -1,0 +1,158 @@
+{
+  "Regular Expressions": [
+    {
+      "type": "import",
+      "text": "Import re",
+      "content": "import re",
+      "template": "import re",
+      "description": "Import regex module"
+    },
+    {
+      "type": "function",
+      "text": "Search pattern",
+      "content": "match = re.search(r'pattern', 'string')",
+      "template": "re.search({pattern}, {string})",
+      "description": "Search for pattern in string"
+    },
+    {
+      "type": "function",
+      "text": "Match pattern",
+      "content": "match = re.match(r'pattern', 'string')",
+      "template": "re.match({pattern}, {string})",
+      "description": "Match pattern at string beginning"
+    },
+    {
+      "type": "function",
+      "text": "Find all matches",
+      "content": "matches = re.findall(r'pattern', 'string')",
+      "template": "re.findall({pattern}, {string})",
+      "description": "Find all non-overlapping matches"
+    },
+    {
+      "type": "function",
+      "text": "Find iterator",
+      "content": "for match in re.finditer(r'pattern', 'string'):\n    print(match.group())",
+      "template": "re.finditer({pattern}, {string})",
+      "description": "Return iterator yielding match objects"
+    },
+    {
+      "type": "function",
+      "text": "Split by pattern",
+      "content": "parts = re.split(r'pattern', 'string')",
+      "template": "re.split({pattern}, {string})",
+      "description": "Split string by pattern"
+    },
+    {
+      "type": "function",
+      "text": "Replace pattern",
+      "content": "new_string = re.sub(r'pattern', 'replacement', 'string')",
+      "template": "re.sub({pattern}, {replacement}, {string})",
+      "description": "Replace pattern matches"
+    },
+    {
+      "type": "function",
+      "text": "Replace with count",
+      "content": "new_string = re.sub(r'pattern', 'replacement', 'string', count=2)",
+      "template": "re.sub({pattern}, {replacement}, {string}, count={n})",
+      "description": "Replace first n occurrences"
+    },
+    {
+      "type": "function",
+      "text": "Compile pattern",
+      "content": "pattern = re.compile(r'pattern')",
+      "template": "re.compile({pattern})",
+      "description": "Compile regex pattern for reuse"
+    },
+    {
+      "type": "function",
+      "text": "Get match groups",
+      "content": "match = re.search(r'(\\d+)-(\\d+)', '123-456')\ngroup1, group2 = match.group(1), match.group(2)",
+      "template": "match.group({n})",
+      "description": "Get captured groups from match"
+    },
+    {
+      "type": "function",
+      "text": "Get all groups",
+      "content": "match = re.search(r'(\\d+)-(\\d+)', '123-456')\ngroups = match.groups()",
+      "template": "match.groups()",
+      "description": "Get all captured groups as tuple"
+    },
+    {
+      "type": "function",
+      "text": "Get match span",
+      "content": "start, end = match.span()",
+      "template": "match.span()",
+      "description": "Get start and end indices of match"
+    },
+    {
+      "type": "function",
+      "text": "Ignore case",
+      "content": "match = re.search(r'pattern', 'string', re.IGNORECASE)",
+      "template": "re.search({pattern}, {string}, re.IGNORECASE)",
+      "description": "Case-insensitive matching"
+    },
+    {
+      "type": "function",
+      "text": "Multiline mode",
+      "content": "match = re.search(r'^pattern', 'string', re.MULTILINE)",
+      "template": "re.search({pattern}, {string}, re.MULTILINE)",
+      "description": "^ and $ match at line boundaries"
+    },
+    {
+      "type": "function",
+      "text": "Dot matches newline",
+      "content": "match = re.search(r'pattern', 'string', re.DOTALL)",
+      "template": "re.search({pattern}, {string}, re.DOTALL)",
+      "description": ". matches any character including newline"
+    },
+    {
+      "type": "variable",
+      "text": "Digits pattern",
+      "content": "r'\\d+'",
+      "template": "r'\\d+'",
+      "description": "One or more digits"
+    },
+    {
+      "type": "variable",
+      "text": "Word characters",
+      "content": "r'\\w+'",
+      "template": "r'\\w+'",
+      "description": "One or more word characters"
+    },
+    {
+      "type": "variable",
+      "text": "Whitespace",
+      "content": "r'\\s+'",
+      "template": "r'\\s+'",
+      "description": "One or more whitespace characters"
+    },
+    {
+      "type": "variable",
+      "text": "Email pattern",
+      "content": "r'[\\w\\.-]+@[\\w\\.-]+\\.\\w+'",
+      "template": "r'[\\w\\.-]+@[\\w\\.-]+\\.\\w+'",
+      "description": "Basic email pattern"
+    },
+    {
+      "type": "variable",
+      "text": "URL pattern",
+      "content": "r'https?://[\\w\\.-]+\\.[a-z]{2,}'",
+      "template": "r'https?://[\\w\\.-]+\\.[a-z]{2,}'",
+      "description": "Basic URL pattern"
+    },
+    {
+      "type": "variable",
+      "text": "Phone number pattern",
+      "content": "r'\\+?\\d[\\d\\s-]{7,}\\d'",
+      "template": "r'\\+?\\d[\\d\\s-]{7,}\\d'",
+      "description": "Basic phone number pattern"
+    },
+    {
+      "type": "function",
+      "text": "Escape special chars",
+      "content": "escaped = re.escape('special.chars*')",
+      "template": "re.escape({string})",
+      "description": "Escape regex special characters"
+    }
+  ]
+}

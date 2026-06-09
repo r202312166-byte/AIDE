@@ -1,0 +1,144 @@
+{
+  "Itertools": [
+    {
+      "type": "import",
+      "text": "Import itertools",
+      "content": "import itertools",
+      "template": "import itertools",
+      "description": "Import itertools module"
+    },
+    {
+      "type": "function",
+      "text": "Count",
+      "content": "counter = itertools.count(start=0, step=1)",
+      "template": "itertools.count(start={n}, step={s})",
+      "description": "Infinite counter"
+    },
+    {
+      "type": "function",
+      "text": "Cycle",
+      "content": "cycler = itertools.cycle(['a', 'b', 'c'])",
+      "template": "itertools.cycle({iterable})",
+      "description": "Cycle through iterable infinitely"
+    },
+    {
+      "type": "function",
+      "text": "Repeat",
+      "content": "repeater = itertools.repeat('x', times=3)",
+      "template": "itertools.repeat({object}, times={n})",
+      "description": "Repeat object n times"
+    },
+    {
+      "type": "function",
+      "text": "Chain",
+      "content": "chained = itertools.chain([1, 2], [3, 4])",
+      "template": "itertools.chain({iterable1}, {iterable2})",
+      "description": "Chain multiple iterables together"
+    },
+    {
+      "type": "function",
+      "text": "Chain from iterable",
+      "content": "chained = itertools.chain.from_iterable([[1, 2], [3, 4]])",
+      "template": "itertools.chain.from_iterable({iterable})",
+      "description": "Chain from iterable of iterables"
+    },
+    {
+      "type": "function",
+      "text": "Compress",
+      "content": "compressed = itertools.compress('ABCD', [1, 0, 1, 0])",
+      "template": "itertools.compress({data}, {selectors})",
+      "description": "Filter elements using selectors"
+    },
+    {
+      "type": "function",
+      "text": "Dropwhile",
+      "content": "result = itertools.dropwhile(lambda x: x < 5, [1, 4, 6, 4, 1])",
+      "template": "itertools.dropwhile({predicate}, {iterable})",
+      "description": "Drop items while predicate is true"
+    },
+    {
+      "type": "function",
+      "text": "Takewhile",
+      "content": "result = itertools.takewhile(lambda x: x < 5, [1, 4, 6, 4, 1])",
+      "template": "itertools.takewhile({predicate}, {iterable})",
+      "description": "Take items while predicate is true"
+    },
+    {
+      "type": "function",
+      "text": "Filterfalse",
+      "content": "result = itertools.filterfalse(lambda x: x%2, range(10))",
+      "template": "itertools.filterfalse({predicate}, {iterable})",
+      "description": "Filter items where predicate is false"
+    },
+    {
+      "type": "function",
+      "text": "Groupby",
+      "content": "for key, group in itertools.groupby('AAABBBCCAAA'):\n    print(key, list(group))",
+      "template": "itertools.groupby({iterable}, {key_func})",
+      "description": "Group consecutive elements by key"
+    },
+    {
+      "type": "function",
+      "text": "Islice",
+      "content": "sliced = itertools.islice(range(10), 2, 8, 2)",
+      "template": "itertools.islice({iterable}, {start}, {stop}, {step})",
+      "description": "Slice an iterator"
+    },
+    {
+      "type": "function",
+      "text": "Product",
+      "content": "products = itertools.product('AB', '12')",
+      "template": "itertools.product({iterable1}, {iterable2})",
+      "description": "Cartesian product"
+    },
+    {
+      "type": "function",
+      "text": "Permutations",
+      "content": "perms = itertools.permutations('ABC', 2)",
+      "template": "itertools.permutations({iterable}, {r})",
+      "description": "All r-length permutations"
+    },
+    {
+      "type": "function",
+      "text": "Combinations",
+      "content": "combs = itertools.combinations('ABC', 2)",
+      "template": "itertools.combinations({iterable}, {r})",
+      "description": "All r-length combinations"
+    },
+    {
+      "type": "function",
+      "text": "Combinations with replacement",
+      "content": "combs = itertools.combinations_with_replacement('ABC', 2)",
+      "template": "itertools.combinations_with_replacement({iterable}, {r})",
+      "description": "All r-length combinations with replacement"
+    },
+    {
+      "type": "function",
+      "text": "Accumulate",
+      "content": "result = itertools.accumulate([1, 2, 3, 4, 5])",
+      "template": "itertools.accumulate({iterable}, {func})",
+      "description": "Accumulate values (default: sum)"
+    },
+    {
+      "type": "function",
+      "text": "Pairwise (Python 3.10+)",
+      "content": "pairs = itertools.pairwise([1, 2, 3, 4])",
+      "template": "itertools.pairwise({iterable})",
+      "description": "Successive overlapping pairs"
+    },
+    {
+      "type": "function",
+      "text": "Tee",
+      "content": "iter1, iter2 = itertools.tee(original_iterator, 2)",
+      "template": "itertools.tee({iterable}, {n})",
+      "description": "Split iterator into n independent iterators"
+    },
+    {
+      "type": "function",
+      "text": "Zip longest",
+      "content": "result = itertools.zip_longest('ABC', 'xy', fillvalue='-')",
+      "template": "itertools.zip_longest({iter1}, {iter2}, fillvalue={val})",
+      "description": "Zip iterables, filling missing values"
+    }
+  ]
+}

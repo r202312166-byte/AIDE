@@ -1,0 +1,25 @@
+OurNotespad/
+├── main.py
+├── core/
+│   ├── __init__.py
+│   ├── code_block.py
+│   ├── parser.py
+│   ├── language_manager.py
+│   └── language_mode_manager.py
+├── ui/
+│   ├── __init__.py
+│   ├── builder.py
+│   ├── components.py
+│   └── help_window.py
+├── utils/
+│   ├── __init__.py
+│   ├── block_loader.py
+│   └── file_handler.py
+├── language/
+│   ├── en.json
+│   └── zh.json
+├── packages/
+│   ├── Python.json
+└── plugins/
+       ├── package_creator.py
+       └── code_pack_plugin.py

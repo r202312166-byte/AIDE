@@ -1,0 +1,109 @@
+{
+  "Random": [
+    {
+      "type": "import",
+      "text": "Import random",
+      "content": "import random",
+      "template": "import random",
+      "description": "Import random module"
+    },
+    {
+      "type": "function",
+      "text": "Random float [0.0, 1.0)",
+      "content": "num = random.random()",
+      "template": "random.random()",
+      "description": "Random float in range [0.0, 1.0)"
+    },
+    {
+      "type": "function",
+      "text": "Random integer",
+      "content": "num = random.randint(1, 10)",
+      "template": "random.randint({a}, {b})",
+      "description": "Random integer N where a <= N <= b"
+    },
+    {
+      "type": "function",
+      "text": "Random range",
+      "content": "num = random.randrange(0, 100, 5)",
+      "template": "random.randrange({start}, {stop}, {step})",
+      "description": "Random element from range(start, stop, step)"
+    },
+    {
+      "type": "function",
+      "text": "Random uniform",
+      "content": "num = random.uniform(1.5, 4.5)",
+      "template": "random.uniform({a}, {b})",
+      "description": "Random float N where a <= N <= b"
+    },
+    {
+      "type": "function",
+      "text": "Random choice",
+      "content": "item = random.choice(['a', 'b', 'c'])",
+      "template": "random.choice({sequence})",
+      "description": "Random element from non-empty sequence"
+    },
+    {
+      "type": "function",
+      "text": "Random choices",
+      "content": "items = random.choices(['a', 'b', 'c'], k=3)",
+      "template": "random.choices({population}, k={n})",
+      "description": "Random n elements with replacement"
+    },
+    {
+      "type": "function",
+      "text": "Random sample",
+      "content": "sample = random.sample(range(100), 5)",
+      "template": "random.sample({population}, {k})",
+      "description": "Random k unique elements without replacement"
+    },
+    {
+      "type": "function",
+      "text": "Shuffle list",
+      "content": "random.shuffle(my_list)",
+      "template": "random.shuffle({list})",
+      "description": "Shuffle list in place"
+    },
+    {
+      "type": "function",
+      "text": "Gaussian distribution",
+      "content": "num = random.gauss(mu=0, sigma=1)",
+      "template": "random.gauss({mu}, {sigma})",
+      "description": "Random float from Gaussian distribution"
+    },
+    {
+      "type": "function",
+      "text": "Seed random",
+      "content": "random.seed(42)",
+      "template": "random.seed({value})",
+      "description": "Initialize random number generator"
+    },
+    {
+      "type": "function",
+      "text": "Get state",
+      "content": "state = random.getstate()",
+      "template": "random.getstate()",
+      "description": "Capture internal state of generator"
+    },
+    {
+      "type": "function",
+      "text": "Set state",
+      "content": "random.setstate(state)",
+      "template": "random.setstate({state})",
+      "description": "Restore internal state of generator"
+    },
+    {
+      "type": "function",
+      "text": "Random bytes",
+      "content": "bytes = random.randbytes(10)",
+      "template": "random.randbytes({n})",
+      "description": "Generate n random bytes"
+    },
+    {
+      "type": "function",
+      "text": "Triangular distribution",
+      "content": "num = random.triangular(low=0, high=1, mode=0.5)",
+      "template": "random.triangular({low}, {high}, {mode})",
+      "description": "Random float from triangular distribution"
+    }
+  ]
+}

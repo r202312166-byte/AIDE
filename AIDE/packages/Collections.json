@@ -1,0 +1,123 @@
+{
+  "Collections": [
+    {
+      "type": "import",
+      "text": "Import collections",
+      "content": "import collections",
+      "template": "import collections",
+      "description": "Import collections module"
+    },
+    {
+      "type": "import",
+      "text": "Import defaultdict",
+      "content": "from collections import defaultdict",
+      "template": "from collections import defaultdict",
+      "description": "Import defaultdict with default values"
+    },
+    {
+      "type": "import",
+      "text": "Import Counter",
+      "content": "from collections import Counter",
+      "template": "from collections import Counter",
+      "description": "Import Counter for counting objects"
+    },
+    {
+      "type": "import",
+      "text": "Import namedtuple",
+      "content": "from collections import namedtuple",
+      "template": "from collections import namedtuple",
+      "description": "Import namedtuple for creating tuple subclasses"
+    },
+    {
+      "type": "import",
+      "text": "Import deque",
+      "content": "from collections import deque",
+      "template": "from collections import deque",
+      "description": "Import deque for double-ended queue"
+    },
+    {
+      "type": "datatype",
+      "text": "DefaultDict",
+      "content": "dd = defaultdict(list)\ndd['key'].append('value')",
+      "template": "defaultdict({default_factory})",
+      "description": "Dictionary with default values"
+    },
+    {
+      "type": "datatype",
+      "text": "Counter",
+      "content": "counter = Counter(['a', 'b', 'a', 'c', 'b', 'a'])",
+      "template": "Counter({iterable})",
+      "description": "Count hashable objects"
+    },
+    {
+      "type": "datatype",
+      "text": "NamedTuple",
+      "content": "Point = namedtuple('Point', ['x', 'y'])\np = Point(10, 20)",
+      "template": "namedtuple({typename}, {field_names})",
+      "description": "Create tuple subclass with named fields"
+    },
+    {
+      "type": "datatype",
+      "text": "Deque",
+      "content": "d = deque([1, 2, 3])",
+      "template": "deque({iterable})",
+      "description": "Double-ended queue"
+    },
+    {
+      "type": "function",
+      "text": "Count elements",
+      "content": "counter = Counter(['a', 'b', 'a', 'c'])\ncount_a = counter['a']",
+      "template": "Counter({iterable})[{element}]",
+      "description": "Count occurrences of elements"
+    },
+    {
+      "type": "function",
+      "text": "Most common elements",
+      "content": "most_common = counter.most_common(2)",
+      "template": "Counter.most_common({n})",
+      "description": "Get n most common elements"
+    },
+    {
+      "type": "function",
+      "text": "Update Counter",
+      "content": "counter.update(['a', 'b', 'a'])",
+      "template": "Counter.update({iterable})",
+      "description": "Add more elements to counter"
+    },
+    {
+      "type": "function",
+      "text": "Deque append left",
+      "content": "d.appendleft(0)",
+      "template": "deque.appendleft({item})",
+      "description": "Add item to left end"
+    },
+    {
+      "type": "function",
+      "text": "Deque pop left",
+      "content": "item = d.popleft()",
+      "template": "deque.popleft()",
+      "description": "Remove and return leftmost item"
+    },
+    {
+      "type": "function",
+      "text": "Deque rotate",
+      "content": "d.rotate(2)",
+      "template": "deque.rotate({n})",
+      "description": "Rotate deque n steps"
+    },
+    {
+      "type": "function",
+      "text": "OrderedDict (Python <3.7)",
+      "content": "od = collections.OrderedDict([('a', 1), ('b', 2)])",
+      "template": "collections.OrderedDict({items})",
+      "description": "Dictionary that remembers insertion order"
+    },
+    {
+      "type": "function",
+      "text": "ChainMap",
+      "content": "cm = collections.ChainMap(dict1, dict2)",
+      "template": "collections.ChainMap({dict1}, {dict2})",
+      "description": "Multiple dicts as single mapping"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<content>
+    <remove>
+        <menubar>
+            Remove 'Programming language' in 'View' and its function.
+            Remove 'Load Code File' in 'File' and its function.
+        </menubar>
+        <functions>
+            Remove the functions about changing programming language.
+        </functions>
+    </remove>
+    <change-add>
+        <file_select>'Import Package' button, 'Import project' choice in the menu
+            Instead of using askopenfile, pop up a windows, which contain:
+                a listbox of json files in the 'packages' or 'projects' folders where user can select them to load,
+                enable munti-select for 'Import Package',
+                a button to load the selected files,
+                a button which user can select json files outside and copy it to the correspond folder.
+        </file_select>
+        <file_save>'Save project' choice, new 'Save project as' coice
+            Change current 'Save project' choice's name into 'Save project as'.
+            Edit the original 'Save project' function as:
+                it will save current project directly into the 'projects' folder without asksavefile,
+                no asking for name,
+                used the project name set by 'Rename Project...' choice,
+                except when there is a file with same name in the folder,
+                which will call 'Save project as'.
+        </file_save>
+        <code_pack>The 'code_pack' block and related functions
+            Add 'Save as pack' choice to top menubar:
+                convert current content to python code,
+                save to 'codepacks' folder directly,
+                asking for name if there are file with same name there,
+                else, used the project name set by 'Rename Project...' choice.
+            Add 'Use pack' choice to top menubar:
+                pop up a listbox to select files in both .py and .txt,
+                place a 'Code Pack' block on the canva,
+                selected file will be its content.
+        </code_pack>
+        <insert_code>New function to change original 'Continue Line' from add content to replace
+            Reduce the height of content edit area a bit,
+            users can now add an 'insert target' below the content editor,
+            and connect other block with 'Insert line' (replace original 'Continue Line'),
+            when converting to code,
+            the 'insert target' in the block connected to will be replaced by the content of blocks start the line,
+            for 'control', 'loop', 'defining' block type,
+            they can't start 'Insert line' and set 'insert target' but can be connected to from other blocks,
+            all other types of blocks can start or be connected to,
+            a block can be connected to more than one 'Insert line',
+            when there is a block start and be connected to a 'Insert line' at the same time,
+            replace the 'insert target' by the content of blocks start the lines,
+            <example>
+                block1:
+                    content:
+                    "Enter your name: "
+                    insert target:
+                    $prompt
+                    connect Insert:
+                    block2
+                block2:
+                    content:
+                    input($prompt)
+                    insert target:
+                    |ins_place|
+                    connect Insert:
+                    block5
+                block3:
+                    content:
+                    "Hello"
+                    insert target:
+                    a
+                    connect Insert:
+                    block5
+                block4:
+                    content:
+                    print(a, |ins_place|)
+                code converted:
+                    print("Hello", input("Enter your name: "))
+            </example>
+            just change the function,
+            keep shortcut key (ctrl+w) the same.
+        </insert_code>
+    </change-add>
+    <others>
+        Change the height of codeblocks from 3 grid to 1 grid.
+        Change app name to AntimonyIDE,
+        project file from .onsp to .aide,
+        and replace other text will shown from OurNotepad to AntimonyIDE.
+        Allow the blocks to extend its width with longer limit than now when content was longer.
+        Auto load 'Python' packages when started.
+    </others>
+</content>

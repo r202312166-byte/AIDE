@@ -1,0 +1,507 @@
+{
+  "Basic Structure": [
+    {
+      "type": "unclosed_tag",
+      "text": "HTML Document",
+      "content": "<!DOCTYPE html>\n<html>",
+      "template": "<!DOCTYPE html>\n<html>",
+      "description": "HTML5 document declaration and root element."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Head",
+      "content": "<head>",
+      "template": "<head>",
+      "description": "Document head section. Contains metadata."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Body",
+      "content": "<body>",
+      "template": "<body>",
+      "description": "Document body section. Contains visible content."
+    },
+    {
+      "type": "text",
+      "text": "Title",
+      "content": "<title>{title}</title>",
+      "template": "<title>{title}</title>",
+      "description": "Document title shown in browser tab."
+    },
+    {
+      "type": "text",
+      "text": "Meta Charset",
+      "content": "<meta charset=\"utf-8\">",
+      "template": "<meta charset=\"utf-8\">",
+      "description": "Character encoding declaration."
+    },
+    {
+      "type": "text",
+      "text": "Viewport Meta",
+      "content": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "template": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "description": "Responsive viewport setting."
+    }
+  ],
+  "Headings": [
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 1",
+      "content": "<h1>",
+      "template": "<h1>",
+      "description": "Most important heading. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 2",
+      "content": "<h2>",
+      "template": "<h2>",
+      "description": "Second level heading. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 3",
+      "content": "<h3>",
+      "template": "<h3>",
+      "description": "Third level heading. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 4",
+      "content": "<h4>",
+      "template": "<h4>",
+      "description": "Fourth level heading. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 5",
+      "content": "<h5>",
+      "template": "<h5>",
+      "description": "Fifth level heading. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Heading 6",
+      "content": "<h6>",
+      "template": "<h6>",
+      "description": "Least important heading. Needs an End Block to close."
+    }
+  ],
+  "Text Formatting": [
+    {
+      "type": "unclosed_tag",
+      "text": "Paragraph",
+      "content": "<p>",
+      "template": "<p>",
+      "description": "Paragraph. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Bold",
+      "content": "<strong>",
+      "template": "<strong>",
+      "description": "Strong importance (bold). Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Italic",
+      "content": "<em>",
+      "template": "<em>",
+      "description": "Emphasized text (italic). Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Underline",
+      "content": "<u>",
+      "template": "<u>",
+      "description": "Underlined text. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Line Break",
+      "content": "<br>",
+      "template": "<br>",
+      "description": "Line break (self-closing)."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Horizontal Rule",
+      "content": "<hr>",
+      "template": "<hr>",
+      "description": "Horizontal rule (self-closing)."
+    },
+    {
+      "type": "text",
+      "text": "Text Content",
+      "content": "Some text",
+      "template": "Some text",
+      "description": "Text content for HTML."
+    }
+  ],
+  "Containers": [
+    {
+      "type": "unclosed_tag",
+      "text": "Div",
+      "content": "<div>",
+      "template": "<div>",
+      "description": "Generic container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Span",
+      "content": "<span>",
+      "template": "<span>",
+      "description": "Inline container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Section",
+      "content": "<section>",
+      "template": "<section>",
+      "description": "Section container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Article",
+      "content": "<article>",
+      "template": "<article>",
+      "description": "Article container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Header",
+      "content": "<header>",
+      "template": "<header>",
+      "description": "Header container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Footer",
+      "content": "<footer>",
+      "template": "<footer>",
+      "description": "Footer container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Nav",
+      "content": "<nav>",
+      "template": "<nav>",
+      "description": "Navigation container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Aside",
+      "content": "<aside>",
+      "template": "<aside>",
+      "description": "Sidebar container. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Main",
+      "content": "<main>",
+      "template": "<main>",
+      "description": "Main content container. Needs an End Block to close."
+    }
+  ],
+  "Lists": [
+    {
+      "type": "unclosed_tag",
+      "text": "Unordered List",
+      "content": "<ul>",
+      "template": "<ul>",
+      "description": "Unordered list (bullet points). Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Ordered List",
+      "content": "<ol>",
+      "template": "<ol>",
+      "description": "Ordered list (numbered). Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "List Item",
+      "content": "<li>",
+      "template": "<li>",
+      "description": "List item. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Description List",
+      "content": "<dl>",
+      "template": "<dl>",
+      "description": "Description list. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Description Term",
+      "content": "<dt>",
+      "template": "<dt>",
+      "description": "Description term. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Description Detail",
+      "content": "<dd>",
+      "template": "<dd>",
+      "description": "Description detail. Needs an End Block to close."
+    }
+  ],
+  "Links and Media": [
+    {
+      "type": "text",
+      "text": "Link",
+      "content": "<a href=\"{url}\">{text}</a>",
+      "template": "<a href=\"{url}\">{text}</a>",
+      "description": "Hyperlink."
+    },
+    {
+      "type": "text",
+      "text": "Image",
+      "content": "<img src=\"{image_url}\" alt=\"{description}\">",
+      "template": "<img src=\"{image_url}\" alt=\"{description}\">",
+      "description": "Image (self-closing)."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Figure",
+      "content": "<figure>",
+      "template": "<figure>",
+      "description": "Figure container. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Figure Caption",
+      "content": "<figcaption>{caption}</figcaption>",
+      "template": "<figcaption>{caption}</figcaption>",
+      "description": "Figure caption."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Audio",
+      "content": "<audio controls>",
+      "template": "<audio controls>",
+      "description": "Audio player. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Video",
+      "content": "<video controls>",
+      "template": "<video controls>",
+      "description": "Video player. Needs an End Block to close."
+    }
+  ],
+  "Tables": [
+    {
+      "type": "unclosed_tag",
+      "text": "Table",
+      "content": "<table>",
+      "template": "<table>",
+      "description": "Table. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Row",
+      "content": "<tr>",
+      "template": "<tr>",
+      "description": "Table row. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Header",
+      "content": "<th>",
+      "template": "<th>",
+      "description": "Table header cell. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Data",
+      "content": "<td>",
+      "template": "<td>",
+      "description": "Table data cell. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Head",
+      "content": "<thead>",
+      "template": "<thead>",
+      "description": "Table head section. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Body",
+      "content": "<tbody>",
+      "template": "<tbody>",
+      "description": "Table body section. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Table Foot",
+      "content": "<tfoot>",
+      "template": "<tfoot>",
+      "description": "Table foot section. Needs an End Block to close."
+    }
+  ],
+  "Forms": [
+    {
+      "type": "unclosed_tag",
+      "text": "Form",
+      "content": "<form action=\"{url}\" method=\"{method}\">",
+      "template": "<form action=\"{url}\" method=\"{method}\">",
+      "description": "Form. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Input",
+      "content": "<input type=\"{type}\" name=\"{name}\">",
+      "template": "<input type=\"{type}\" name=\"{name}\">",
+      "description": "Form input (self-closing)."
+    },
+    {
+      "type": "text",
+      "text": "Textarea",
+      "content": "<textarea name=\"{name}\" rows=\"{rows}\" cols=\"{cols}\"></textarea>",
+      "template": "<textarea name=\"{name}\" rows=\"{rows}\" cols=\"{cols}\"></textarea>",
+      "description": "Multi-line text input."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Select",
+      "content": "<select name=\"{name}\">",
+      "template": "<select name=\"{name}\">",
+      "description": "Dropdown select. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Option",
+      "content": "<option value=\"{value}\">{text}</option>",
+      "template": "<option value=\"{value}\">{text}</option>",
+      "description": "Select option."
+    },
+    {
+      "type": "text",
+      "text": "Label",
+      "content": "<label for=\"{input_id}\">{text}</label>",
+      "template": "<label for=\"{input_id}\">{text}</label>",
+      "description": "Form label."
+    },
+    {
+      "type": "text",
+      "text": "Button",
+      "content": "<button type=\"{type}\">{text}</button>",
+      "template": "<button type=\"{type}\">{text}</button>",
+      "description": "Button element."
+    }
+  ],
+  "Semantic Elements": [
+    {
+      "type": "unclosed_tag",
+      "text": "Time",
+      "content": "<time datetime=\"{datetime}\">",
+      "template": "<time datetime=\"{datetime}\">",
+      "description": "Time element. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Mark",
+      "content": "<mark>{text}</mark>",
+      "template": "<mark>{text}</mark>",
+      "description": "Highlighted text."
+    },
+    {
+      "type": "text",
+      "text": "Code",
+      "content": "<code>{code}</code>",
+      "template": "<code>{code}</code>",
+      "description": "Inline code."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Preformatted",
+      "content": "<pre>",
+      "template": "<pre>",
+      "description": "Preformatted text. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Blockquote",
+      "content": "<blockquote cite=\"{url}\">{text}</blockquote>",
+      "template": "<blockquote cite=\"{url}\">{text}</blockquote>",
+      "description": "Block quotation."
+    },
+    {
+      "type": "text",
+      "text": "Citation",
+      "content": "<cite>{text}</cite>",
+      "template": "<cite>{text}</cite>",
+      "description": "Citation."
+    },
+    {
+      "type": "text",
+      "text": "Abbreviation",
+      "content": "<abbr title=\"{full_text}\">{abbr}</abbr>",
+      "template": "<abbr title=\"{full_text}\">{abbr}</abbr>",
+      "description": "Abbreviation with full text on hover."
+    }
+  ],
+  "Scripting and Styling": [
+    {
+      "type": "unclosed_tag",
+      "text": "Style",
+      "content": "<style>",
+      "template": "<style>",
+      "description": "CSS styles. Needs an End Block to close."
+    },
+    {
+      "type": "unclosed_tag",
+      "text": "Script",
+      "content": "<script>",
+      "template": "<script>",
+      "description": "JavaScript code. Needs an End Block to close."
+    },
+    {
+      "type": "text",
+      "text": "Link CSS",
+      "content": "<link rel=\"stylesheet\" href=\"{css_url}\">",
+      "template": "<link rel=\"stylesheet\" href=\"{css_url}\">",
+      "description": "Link to external CSS (self-closing)."
+    },
+    {
+      "type": "text",
+      "text": "Script External",
+      "content": "<script src=\"{js_url}\"></script>",
+      "template": "<script src=\"{js_url}\"></script>",
+      "description": "Link to external JavaScript."
+    }
+  ],
+  "End Tags": [
+    {
+      "type": "text",
+      "text": "End Tag",
+      "content": "</{tag}>",
+      "template": "</{tag}>",
+      "description": "Closing tag for HTML elements."
+    },
+    {
+      "type": "text",
+      "text": "Close Head",
+      "content": "</head>",
+      "template": "</head>",
+      "description": "Close head section."
+    },
+    {
+      "type": "text",
+      "text": "Close Body",
+      "content": "</body>",
+      "template": "</body>",
+      "description": "Close body section."
+    },
+    {
+      "type": "text",
+      "text": "Close HTML",
+      "content": "</html>",
+      "template": "</html>",
+      "description": "Close HTML document."
+    }
+  ]
+}

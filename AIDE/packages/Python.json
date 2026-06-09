@@ -1,0 +1,221 @@
+{
+  "Statements": [
+    {
+      "type": "statement",
+      "text": "Print",
+      "content": "print({value})",
+      "template": "print({value})",
+      "description": "Output text to console."
+    },
+    {
+      "type": "statement",
+      "text": "Assign",
+      "content": "{var} = {value}",
+      "template": "{var} = {value}",
+      "description": "Assign a value to a variable."
+    },
+    {
+      "type": "statement",
+      "text": "Return",
+      "content": "return {value}",
+      "template": "return {value}",
+      "description": "Return a value from a function."
+    },
+    {
+      "type": "statement",
+      "text": "Pass",
+      "content": "pass",
+      "template": "pass",
+      "description": "Do nothing. Used as a placeholder."
+    },
+    {
+      "type": "statement",
+      "text": "Break",
+      "content": "break",
+      "template": "break",
+      "description": "Exit a loop immediately."
+    },
+    {
+      "type": "statement",
+      "text": "Continue",
+      "content": "continue",
+      "template": "continue",
+      "description": "Skip to the next iteration of a loop."
+    },
+    {
+      "type": "statement",
+      "text": "Coment",
+      "content": "#",
+      "template": "#",
+      "description": "/"
+    }
+  ],
+  "Control Flow": [
+    {
+      "type": "control",
+      "text": "If",
+      "content": "if {condition}:",
+      "template": "if {condition}:",
+      "description": "Conditional statement. Executes code if condition is True."
+    },
+    {
+      "type": "control",
+      "text": "Else",
+      "content": "else:",
+      "template": "else:",
+      "description": "Optional part of if statement. Executes when if condition is False."
+    },
+    {
+      "type": "control",
+      "text": "Elif",
+      "content": "elif {condition}:",
+      "template": "elif {condition}:",
+      "description": "Else-if statement. Checks another condition if previous if/elif was False."
+    }
+  ],
+  "Loops": [
+    {
+      "type": "loop",
+      "text": "For Loop",
+      "content": "for {item} in {iterable}:",
+      "template": "for {item} in {iterable}:",
+      "description": "Loop through items in a sequence."
+    },
+    {
+      "type": "loop",
+      "text": "While Loop",
+      "content": "while {condition}:",
+      "template": "while {condition}:",
+      "description": "Loop while condition is True."
+    }
+  ],
+  "Functions": [
+    {
+      "type": "defining",
+      "text": "Define Function",
+      "content": "def {name}({params}):",
+      "template": "def {name}({params}):",
+      "description": "Define a new function. Set an End Block for the function body."
+    },
+    {
+      "type": "function",
+      "text": "Call Function",
+      "content": "{name}({args})",
+      "template": "{name}({args})",
+      "description": "Call (execute) a function."
+    },
+    {
+      "type": "function",
+      "text": "Lambda",
+      "content": "lambda {params}: {expression}",
+      "template": "lambda {params}: {expression}",
+      "description": "Create a small anonymous function."
+    }
+  ],
+  "I/O": [
+    {
+      "type": "io",
+      "text": "Input",
+      "content": "input({prompt})",
+      "template": "input({prompt})",
+      "description": "Get user input from keyboard."
+    },
+    {
+      "type": "io",
+      "text": "Open File",
+      "content": "open({filename}, {mode})",
+      "template": "open({filename}, {mode})",
+      "description": "Open a file. Modes: 'r' (read), 'w' (write), 'a' (append)."
+    }
+  ],
+  "Variables": [
+    {
+      "type": "variable",
+      "text": "Integer",
+      "content": "int({value})",
+      "template": "int({value})",
+      "description": "Convert value to integer."
+    },
+    {
+      "type": "variable",
+      "text": "Float",
+      "content": "float({value})",
+      "template": "float({value})",
+      "description": "Convert value to floating-point number."
+    },
+    {
+      "type": "variable",
+      "text": "String",
+      "content": "str({value})",
+      "template": "str({value})",
+      "description": "Convert value to string."
+    },
+    {
+      "type": "variable",
+      "text": "List",
+      "content": "list({iterable})",
+      "template": "list({iterable})",
+      "description": "Create a list from an iterable."
+    },
+    {
+      "type": "variable",
+      "text": "Dict",
+      "content": "dict({mapping})",
+      "template": "dict({mapping})",
+      "description": "Create a dictionary."
+    }
+  ],
+  "Operators": [
+    {
+      "type": "operator",
+      "text": "Add (+)",
+      "content": "{a} + {b}",
+      "template": "{a} + {b}",
+      "description": "Add two values."
+    },
+    {
+      "type": "operator",
+      "text": "Subtract (-)",
+      "content": "{a} - {b}",
+      "template": "{a} - {b}",
+      "description": "Subtract b from a."
+    },
+    {
+      "type": "operator",
+      "text": "Multiply (*)",
+      "content": "{a} * {b}",
+      "template": "{a} * {b}",
+      "description": "Multiply two values."
+    },
+    {
+      "type": "operator",
+      "text": "Divide (/)",
+      "content": "{a} / {b}",
+      "template": "{a} / {b}",
+      "description": "Divide a by b."
+    },
+    {
+      "type": "operator",
+      "text": "Equal (==)",
+      "content": "{a} == {b}",
+      "template": "{a} == {b}",
+      "description": "Check if two values are equal."
+    }
+  ],
+  "Imports": [
+    {
+      "type": "import",
+      "text": "Import",
+      "content": "import {module}",
+      "template": "import {module}",
+      "description": "Import an entire module."
+    },
+    {
+      "type": "import",
+      "text": "From Import",
+      "content": "from {module} import {name}",
+      "template": "from {module} import {name}",
+      "description": "Import specific names from a module."
+    }
+  ]
+}

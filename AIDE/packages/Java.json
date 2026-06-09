@@ -1,0 +1,365 @@
+{
+  "Statements": [
+    {
+      "type": "statement",
+      "text": "Print",
+      "content": "System.out.println({value});",
+      "template": "System.out.println({value});",
+      "description": "Output text to console in Java."
+    },
+    {
+      "type": "statement",
+      "text": "Print Without Newline",
+      "content": "System.out.print({value});",
+      "template": "System.out.print({value});",
+      "description": "Output text without newline."
+    },
+    {
+      "type": "statement",
+      "text": "Variable Declaration",
+      "content": "{type} {name} = {value};",
+      "template": "{type} {name} = {value};",
+      "description": "Declare and initialize a variable."
+    },
+    {
+      "type": "statement",
+      "text": "Return",
+      "content": "return {value};",
+      "template": "return {value};",
+      "description": "Return a value from a method."
+    },
+    {
+      "type": "statement",
+      "text": "Break",
+      "content": "break;",
+      "template": "break;",
+      "description": "Exit a loop immediately."
+    },
+    {
+      "type": "statement",
+      "text": "Continue",
+      "content": "continue;",
+      "template": "continue;",
+      "description": "Skip to the next iteration of a loop."
+    },
+    {
+      "type": "statement",
+      "text": "Comment",
+      "content": "// {comment}",
+      "template": "// {comment}",
+      "description": "Single line comment."
+    },
+    {
+      "type": "statement",
+      "text": "Multi-line Comment",
+      "content": "/* {comment} */",
+      "template": "/* {comment} */",
+      "description": "Multi-line comment."
+    }
+  ],
+  "Control Flow": [
+    {
+      "type": "control",
+      "text": "If",
+      "content": "if ({condition}) {",
+      "template": "if ({condition}) {",
+      "description": "Java if statement. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Else",
+      "content": "} else {",
+      "template": "} else {",
+      "description": "Java else statement. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Else If",
+      "content": "} else if ({condition}) {",
+      "template": "} else if ({condition}) {",
+      "description": "Java else-if statement. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Switch",
+      "content": "switch ({variable}) {",
+      "template": "switch ({variable}) {",
+      "description": "Java switch statement. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Case",
+      "content": "case {value}:",
+      "template": "case {value}:",
+      "description": "Case in a switch statement."
+    },
+    {
+      "type": "control",
+      "text": "Default",
+      "content": "default:",
+      "template": "default:",
+      "description": "Default case in a switch statement."
+    }
+  ],
+  "Loops": [
+    {
+      "type": "loop",
+      "text": "For Loop",
+      "content": "for (int {i} = 0; {i} < {n}; {i}++) {",
+      "template": "for (int {i} = 0; {i} < {n}; {i}++) {",
+      "description": "Java for loop. Needs an End Block to close."
+    },
+    {
+      "type": "loop",
+      "text": "Enhanced For Loop",
+      "content": "for ({type} {item} : {collection}) {",
+      "template": "for ({type} {item} : {collection}) {",
+      "description": "Java enhanced for loop (for-each). Needs an End Block to close."
+    },
+    {
+      "type": "loop",
+      "text": "While Loop",
+      "content": "while ({condition}) {",
+      "template": "while ({condition}) {",
+      "description": "Java while loop. Needs an End Block to close."
+    },
+    {
+      "type": "loop",
+      "text": "Do-While Loop",
+      "content": "do {",
+      "template": "do {",
+      "description": "Java do-while loop. Needs an End Block to close."
+    }
+  ],
+  "Classes": [
+    {
+      "type": "class",
+      "text": "Class",
+      "content": "public class {ClassName} {",
+      "template": "public class {ClassName} {",
+      "description": "Java class definition. Needs an End Block to close."
+    },
+    {
+      "type": "class",
+      "text": "Abstract Class",
+      "content": "public abstract class {ClassName} {",
+      "template": "public abstract class {ClassName} {",
+      "description": "Java abstract class. Needs an End Block to close."
+    },
+    {
+      "type": "class",
+      "text": "Interface",
+      "content": "public interface {InterfaceName} {",
+      "template": "public interface {InterfaceName} {",
+      "description": "Java interface. Needs an End Block to close."
+    },
+    {
+      "type": "class",
+      "text": "Enum",
+      "content": "public enum {EnumName} {",
+      "template": "public enum {EnumName} {",
+      "description": "Java enum. Needs an End Block to close."
+    }
+  ],
+  "Methods": [
+    {
+      "type": "method",
+      "text": "Main Method",
+      "content": "public static void main(String[] args) {",
+      "template": "public static void main(String[] args) {",
+      "description": "Java main method. Needs an End Block to close."
+    },
+    {
+      "type": "method",
+      "text": "Method",
+      "content": "public {return_type} {methodName}({parameters}) {",
+      "template": "public {return_type} {methodName}({parameters}) {",
+      "description": "Java method. Needs an End Block to close."
+    },
+    {
+      "type": "method",
+      "text": "Static Method",
+      "content": "public static {return_type} {methodName}({parameters}) {",
+      "template": "public static {return_type} {methodName}({parameters}) {",
+      "description": "Java static method. Needs an End Block to close."
+    },
+    {
+      "type": "method",
+      "text": "Constructor",
+      "content": "public {ClassName}({parameters}) {",
+      "template": "public {ClassName}({parameters}) {",
+      "description": "Java constructor. Needs an End Block to close."
+    }
+  ],
+  "Data Types": [
+    {
+      "type": "variable",
+      "text": "Integer",
+      "content": "int",
+      "template": "int",
+      "description": "Integer data type."
+    },
+    {
+      "type": "variable",
+      "text": "Double",
+      "content": "double",
+      "template": "double",
+      "description": "Double precision floating point."
+    },
+    {
+      "type": "variable",
+      "text": "Boolean",
+      "content": "boolean",
+      "template": "boolean",
+      "description": "Boolean data type (true/false)."
+    },
+    {
+      "type": "variable",
+      "text": "String",
+      "content": "String",
+      "template": "String",
+      "description": "String data type."
+    },
+    {
+      "type": "variable",
+      "text": "Array",
+      "content": "{type}[]",
+      "template": "{type}[]",
+      "description": "Array declaration."
+    },
+    {
+      "type": "variable",
+      "text": "ArrayList",
+      "content": "ArrayList<{type}>",
+      "template": "ArrayList<{type}>",
+      "description": "ArrayList declaration."
+    }
+  ],
+  "Operators": [
+    {
+      "type": "operator",
+      "text": "Add (+)",
+      "content": "{a} + {b}",
+      "template": "{a} + {b}",
+      "description": "Add two values."
+    },
+    {
+      "type": "operator",
+      "text": "Subtract (-)",
+      "content": "{a} - {b}",
+      "template": "{a} - {b}",
+      "description": "Subtract b from a."
+    },
+    {
+      "type": "operator",
+      "text": "Multiply (*)",
+      "content": "{a} * {b}",
+      "template": "{a} * {b}",
+      "description": "Multiply two values."
+    },
+    {
+      "type": "operator",
+      "text": "Divide (/)",
+      "content": "{a} / {b}",
+      "template": "{a} / {b}",
+      "description": "Divide a by b."
+    },
+    {
+      "type": "operator",
+      "text": "Modulus (%)",
+      "content": "{a} % {b}",
+      "template": "{a} % {b}",
+      "description": "Get remainder of division."
+    },
+    {
+      "type": "operator",
+      "text": "Equal (==)",
+      "content": "{a} == {b}",
+      "template": "{a} == {b}",
+      "description": "Check if two values are equal."
+    },
+    {
+      "type": "operator",
+      "text": "Not Equal (!=)",
+      "content": "{a} != {b}",
+      "template": "{a} != {b}",
+      "description": "Check if two values are not equal."
+    },
+    {
+      "type": "operator",
+      "text": "And (&&)",
+      "content": "{a} && {b}",
+      "template": "{a} && {b}",
+      "description": "Logical AND."
+    },
+    {
+      "type": "operator",
+      "text": "Or (||)",
+      "content": "{a} || {b}",
+      "template": "{a} || {b}",
+      "description": "Logical OR."
+    }
+  ],
+  "Imports": [
+    {
+      "type": "import",
+      "text": "Import",
+      "content": "import {package};",
+      "template": "import {package};",
+      "description": "Import a package."
+    },
+    {
+      "type": "import",
+      "text": "Static Import",
+      "content": "import static {package}.{class}.{method};",
+      "template": "import static {package}.{class}.{method};",
+      "description": "Static import."
+    }
+  ],
+  "Exception Handling": [
+    {
+      "type": "control",
+      "text": "Try",
+      "content": "try {",
+      "template": "try {",
+      "description": "Try block for exception handling. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Catch",
+      "content": "} catch ({ExceptionType} e) {",
+      "template": "} catch ({ExceptionType} e) {",
+      "description": "Catch block. Needs an End Block to close."
+    },
+    {
+      "type": "control",
+      "text": "Finally",
+      "content": "} finally {",
+      "template": "} finally {",
+      "description": "Finally block. Needs an End Block to close."
+    },
+    {
+      "type": "statement",
+      "text": "Throw",
+      "content": "throw new {ExceptionType}(\"{message}\");",
+      "template": "throw new {ExceptionType}(\"{message}\");",
+      "description": "Throw an exception."
+    }
+  ],
+  "End Blocks": [
+    {
+      "type": "statement",
+      "text": "End Block",
+      "content": "}",
+      "template": "}",
+      "description": "End block for Java control structures."
+    },
+    {
+      "type": "statement",
+      "text": "End Case",
+      "content": "break;",
+      "template": "break;",
+      "description": "End a case in switch statement."
+    }
+  ]
+}

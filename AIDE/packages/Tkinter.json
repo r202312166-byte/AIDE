@@ -1,0 +1,354 @@
+{
+  "Tkinter": [
+    {
+      "type": "import",
+      "text": "Import Tkinter",
+      "content": "import tkinter as tk",
+      "template": "import tkinter as tk",
+      "description": "Import Tkinter module with tk alias"
+    },
+    {
+      "type": "import",
+      "text": "Import ttk",
+      "content": "from tkinter import ttk",
+      "template": "from tkinter import ttk",
+      "description": "Import themed Tkinter widgets"
+    },
+    {
+      "type": "import",
+      "text": "Import messagebox",
+      "content": "from tkinter import messagebox",
+      "template": "from tkinter import messagebox",
+      "description": "Import messagebox dialogs"
+    },
+    {
+      "type": "window",
+      "text": "Create Main Window",
+      "content": "root = tk.Tk()\nroot.title(\"My App\")\nroot.geometry(\"400x300\")",
+      "template": "{variable} = tk.Tk()\n{variable}.title({title})\n{variable}.geometry({size})",
+      "description": "Create main Tkinter window with title and size"
+    },
+    {
+      "type": "widget",
+      "text": "Label Widget",
+      "content": "label = tk.Label(root, text=\"Hello World\", font=(\"Arial\", 12))",
+      "template": "tk.Label({parent}, text={text}, font={font})",
+      "description": "Create a label widget"
+    },
+    {
+      "type": "widget",
+      "text": "Button Widget",
+      "content": "button = tk.Button(root, text=\"Click Me\", command=callback_function)",
+      "template": "tk.Button({parent}, text={text}, command={function})",
+      "description": "Create a button with click handler"
+    },
+    {
+      "type": "widget",
+      "text": "Entry Widget",
+      "content": "entry = tk.Entry(root, width=30)",
+      "template": "tk.Entry({parent}, width={width})",
+      "description": "Create a single-line text entry field"
+    },
+    {
+      "type": "widget",
+      "text": "Text Widget",
+      "content": "text = tk.Text(root, height=10, width=40)",
+      "template": "tk.Text({parent}, height={height}, width={width})",
+      "description": "Create a multi-line text widget"
+    },
+    {
+      "type": "widget",
+      "text": "Listbox Widget",
+      "content": "listbox = tk.Listbox(root, height=5)",
+      "template": "tk.Listbox({parent}, height={height})",
+      "description": "Create a list selection widget"
+    },
+    {
+      "type": "widget",
+      "text": "Checkbutton Widget",
+      "content": "var = tk.IntVar()\ncheck = tk.Checkbutton(root, text=\"Option\", variable=var)",
+      "template": "tk.Checkbutton({parent}, text={text}, variable={variable})",
+      "description": "Create a checkbox with variable binding"
+    },
+    {
+      "type": "widget",
+      "text": "Radiobutton Widget",
+      "content": "var = tk.StringVar()\nradio1 = tk.Radiobutton(root, text=\"Option 1\", variable=var, value=\"1\")",
+      "template": "tk.Radiobutton({parent}, text={text}, variable={variable}, value={value})",
+      "description": "Create a radio button"
+    },
+    {
+      "type": "widget",
+      "text": "Scale Widget",
+      "content": "scale = tk.Scale(root, from_=0, to=100, orient=tk.HORIZONTAL)",
+      "template": "tk.Scale({parent}, from_={min}, to={max}, orient={orientation})",
+      "description": "Create a slider scale widget"
+    },
+    {
+      "type": "widget",
+      "text": "Frame Widget",
+      "content": "frame = tk.Frame(root, relief=tk.RAISED, borderwidth=2)",
+      "template": "tk.Frame({parent}, relief={relief}, borderwidth={width})",
+      "description": "Create a container frame"
+    },
+    {
+      "type": "widget",
+      "text": "Canvas Widget",
+      "content": "canvas = tk.Canvas(root, width=200, height=200)",
+      "template": "tk.Canvas({parent}, width={width}, height={height})",
+      "description": "Create a drawing canvas"
+    },
+    {
+      "type": "widget",
+      "text": "Scrollbar Widget",
+      "content": "scrollbar = tk.Scrollbar(root, orient=tk.VERTICAL)",
+      "template": "tk.Scrollbar({parent}, orient={orientation})",
+      "description": "Create a scrollbar"
+    },
+    {
+      "type": "layout",
+      "text": "Pack Geometry Manager",
+      "content": "widget.pack(side=tk.TOP, fill=tk.BOTH, expand=True)",
+      "template": "{widget}.pack(side={side}, fill={fill}, expand={boolean})",
+      "description": "Place widget using pack layout"
+    },
+    {
+      "type": "layout",
+      "text": "Grid Geometry Manager",
+      "content": "widget.grid(row=0, column=0, sticky=tk.W+tk.E)",
+      "template": "{widget}.grid(row={row}, column={column}, sticky={sticky})",
+      "description": "Place widget using grid layout"
+    },
+    {
+      "type": "layout",
+      "text": "Place Geometry Manager",
+      "content": "widget.place(x=50, y=50, width=100, height=50)",
+      "template": "{widget}.place(x={x}, y={y}, width={width}, height={height})",
+      "description": "Place widget using absolute positioning"
+    },
+    {
+      "type": "variable",
+      "text": "StringVar",
+      "content": "text_var = tk.StringVar(value=\"Default Text\")",
+      "template": "tk.StringVar(value={default_value})",
+      "description": "Create a Tkinter string variable"
+    },
+    {
+      "type": "variable",
+      "text": "IntVar",
+      "content": "int_var = tk.IntVar(value=0)",
+      "template": "tk.IntVar(value={default_value})",
+      "description": "Create a Tkinter integer variable"
+    },
+    {
+      "type": "variable",
+      "text": "BooleanVar",
+      "content": "bool_var = tk.BooleanVar(value=True)",
+      "template": "tk.BooleanVar(value={default_value})",
+      "description": "Create a Tkinter boolean variable"
+    },
+    {
+      "type": "dialog",
+      "text": "Messagebox Info",
+      "content": "messagebox.showinfo(\"Title\", \"Message text\")",
+      "template": "messagebox.showinfo({title}, {message})",
+      "description": "Show information message dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "Messagebox Warning",
+      "content": "messagebox.showwarning(\"Warning\", \"Warning message\")",
+      "template": "messagebox.showwarning({title}, {message})",
+      "description": "Show warning message dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "Messagebox Error",
+      "content": "messagebox.showerror(\"Error\", \"Error message\")",
+      "template": "messagebox.showerror({title}, {message})",
+      "description": "Show error message dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "Messagebox Question",
+      "content": "result = messagebox.askyesno(\"Question\", \"Proceed?\")",
+      "template": "messagebox.askyesno({title}, {question})",
+      "description": "Show yes/no question dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "File Dialog Open",
+      "content": "filename = tk.filedialog.askopenfilename()",
+      "template": "tk.filedialog.askopenfilename()",
+      "description": "Open file selection dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "File Dialog Save",
+      "content": "filename = tk.filedialog.asksaveasfilename()",
+      "template": "tk.filedialog.asksaveasfilename()",
+      "description": "Open save file dialog"
+    },
+    {
+      "type": "dialog",
+      "text": "Color Dialog",
+      "content": "color = tk.colorchooser.askcolor()",
+      "template": "tk.colorchooser.askcolor()",
+      "description": "Open color selection dialog"
+    },
+    {
+      "type": "event",
+      "text": "Bind Event",
+      "content": "widget.bind(\"<Button-1>\", callback_function)",
+      "template": "{widget}.bind({event}, {callback})",
+      "description": "Bind event handler to widget"
+    },
+    {
+      "type": "event",
+      "text": "Button Click Event",
+      "content": "<Button-1>",
+      "template": "<Button-1>",
+      "description": "Left mouse button click event"
+    },
+    {
+      "type": "event",
+      "text": "Key Press Event",
+      "content": "<Key>",
+      "template": "<Key>",
+      "description": "Keyboard key press event"
+    },
+    {
+      "type": "event",
+      "text": "Enter Key Event",
+      "content": "<Return>",
+      "template": "<Return>",
+      "description": "Enter/Return key press event"
+    },
+    {
+      "type": "config",
+      "text": "Configure Widget",
+      "content": "widget.config(text=\"New Text\", fg=\"red\")",
+      "template": "{widget}.config({property}={value})",
+      "description": "Configure widget properties"
+    },
+    {
+      "type": "config",
+      "text": "Get Widget Property",
+      "content": "current_text = widget.cget(\"text\")",
+      "template": "{widget}.cget({property})",
+      "description": "Get widget property value"
+    },
+    {
+      "type": "method",
+      "text": "Insert Text",
+      "content": "text_widget.insert(\"1.0\", \"Hello World\")",
+      "template": "{text_widget}.insert({index}, {text})",
+      "description": "Insert text into text widget"
+    },
+    {
+      "type": "method",
+      "text": "Get Text Content",
+      "content": "content = text_widget.get(\"1.0\", tk.END)",
+      "template": "{text_widget}.get({start}, {end})",
+      "description": "Get text from text widget"
+    },
+    {
+      "type": "method",
+      "text": "Delete Text",
+      "content": "text_widget.delete(\"1.0\", tk.END)",
+      "template": "{text_widget}.delete({start}, {end})",
+      "description": "Delete text from text widget"
+    },
+    {
+      "type": "method",
+      "text": "Get Entry Value",
+      "content": "value = entry.get()",
+      "template": "{entry}.get()",
+      "description": "Get value from entry widget"
+    },
+    {
+      "type": "method",
+      "text": "Set Entry Value",
+      "content": "entry.insert(0, \"Default text\")",
+      "template": "{entry}.insert(0, {text})",
+      "description": "Set value in entry widget"
+    },
+    {
+      "type": "method",
+      "text": "Clear Entry",
+      "content": "entry.delete(0, tk.END)",
+      "template": "{entry}.delete(0, tk.END)",
+      "description": "Clear entry widget content"
+    },
+    {
+      "type": "loop",
+      "text": "Main Event Loop",
+      "content": "root.mainloop()",
+      "template": "{window}.mainloop()",
+      "description": "Start Tkinter event loop"
+    },
+    {
+      "type": "ttk",
+      "text": "TTK Button",
+      "content": "ttk_button = ttk.Button(root, text=\"TTK Button\")",
+      "template": "ttk.Button({parent}, text={text})",
+      "description": "Create themed button widget"
+    },
+    {
+      "type": "ttk",
+      "text": "TTK Combobox",
+      "content": "combo = ttk.Combobox(root, values=[\"Option 1\", \"Option 2\"])",
+      "template": "ttk.Combobox({parent}, values={list})",
+      "description": "Create dropdown combobox"
+    },
+    {
+      "type": "ttk",
+      "text": "TTK Progressbar",
+      "content": "progress = ttk.Progressbar(root, mode=\"indeterminate\")",
+      "template": "ttk.Progressbar({parent}, mode={mode})",
+      "description": "Create progress bar widget"
+    },
+    {
+      "type": "ttk",
+      "text": "TTK Notebook",
+      "content": "notebook = ttk.Notebook(root)\nnotebook.add(frame, text=\"Tab 1\")",
+      "template": "ttk.Notebook({parent})",
+      "description": "Create tabbed interface"
+    },
+    {
+      "type": "ttk",
+      "text": "TTK Treeview",
+      "content": "tree = ttk.Treeview(root, columns=(\"Name\", \"Age\"))",
+      "template": "ttk.Treeview({parent}, columns={tuple})",
+      "description": "Create tree/list view widget"
+    },
+    {
+      "type": "menu",
+      "text": "Menu Bar",
+      "content": "menubar = tk.Menu(root)\nroot.config(menu=menubar)",
+      "template": "tk.Menu({parent})",
+      "description": "Create menu bar"
+    },
+    {
+      "type": "menu",
+      "text": "Menu Item",
+      "content": "file_menu = tk.Menu(menubar, tearoff=0)\nfile_menu.add_command(label=\"Open\", command=open_file)",
+      "template": "{menu}.add_command(label={label}, command={function})",
+      "description": "Add command to menu"
+    },
+    {
+      "type": "variable",
+      "text": "Widget State",
+      "content": "widget.config(state=tk.NORMAL)",
+      "template": "{widget}.config(state={state})",
+      "description": "Set widget state (NORMAL, DISABLED)"
+    },
+    {
+      "type": "variable",
+      "text": "Text Tags",
+      "content": "text_widget.tag_config(\"highlight\", background=\"yellow\")",
+      "template": "{text_widget}.tag_config({tag_name}, {properties})",
+      "description": "Configure text tags for styling"
+    }
+  ]
+}

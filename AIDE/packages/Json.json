@@ -1,0 +1,95 @@
+{
+  "Json": [
+    {
+      "type": "import",
+      "text": "Import json",
+      "content": "import json",
+      "template": "import json",
+      "description": "Import the json module"
+    },
+    {
+      "type": "function",
+      "text": "json.loads",
+      "content": "json.loads({json_string})",
+      "template": "json.loads({json_string})",
+      "description": "Parse a JSON string and return a Python object"
+    },
+    {
+      "type": "function",
+      "text": "json.dumps",
+      "content": "json.dumps({python_object}, indent={indent})",
+      "template": "json.dumps({python_object})",
+      "description": "Convert a Python object to a JSON string"
+    },
+    {
+      "type": "function",
+      "text": "json.load",
+      "content": "with open({filename}, 'r') as f:\n    data = json.load(f)",
+      "template": "json.load(open({filename}))",
+      "description": "Load JSON data from a file"
+    },
+    {
+      "type": "function",
+      "text": "json.dump",
+      "content": "with open({filename}, 'w') as f:\n    json.dump({data}, f, indent={indent})",
+      "template": "json.dump({data}, open({filename}, 'w'))",
+      "description": "Write JSON data to a file"
+    },
+    {
+      "type": "function",
+      "text": "json.parse",
+      "content": "data = json.loads({json_string})",
+      "template": "json.loads({json_string})",
+      "description": "Parse JSON string (alias for loads)"
+    },
+    {
+      "type": "function",
+      "text": "json.stringify",
+      "content": "json_string = json.dumps({data})",
+      "template": "json.dumps({data})",
+      "description": "Stringify object to JSON (alias for dumps)"
+    },
+    {
+      "type": "variable",
+      "text": "JSON String",
+      "content": "\"{key}\": \"{value}\"",
+      "template": "\"{key}\": \"{value}\"",
+      "description": "Create a JSON key-value pair string"
+    },
+    {
+      "type": "variable",
+      "text": "JSON Object",
+      "content": "{{\"{key}\": \"{value}\"}}",
+      "template": "{{\"{key}\": \"{value}\"}}",
+      "description": "Create a JSON object string"
+    },
+    {
+      "type": "variable",
+      "text": "JSON Array",
+      "content": "[{item1}, {item2}]",
+      "template": "[{item1}, {item2}]",
+      "description": "Create a JSON array string"
+    },
+    {
+      "type": "function",
+      "text": "Pretty JSON",
+      "content": "json.dumps({data}, indent=2, ensure_ascii=False)",
+      "template": "json.dumps({data}, indent=2)",
+      "description": "Convert to pretty-printed JSON with indentation"
+    },
+    {
+      "type": "function",
+      "text": "JSON Keys",
+      "content": "keys = list({json_data}.keys())",
+      "template": "list({json_data}.keys())",
+      "description": "Get all keys from a JSON object"
+    },
+    {
+      "type": "function",
+      "text": "JSON Values",
+      "content": "values = list({json_data}.values())",
+      "template": "list({json_data}.values())",
+      "description": "Get all values from a JSON object"
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "OS Operations": [
+    {
+      "type": "import",
+      "text": "Import os",
+      "content": "import os",
+      "template": "import os",
+      "description": "Import the os module for operating system interactions"
+    },
+    {
+      "type": "import",
+      "text": "Import shutil",
+      "content": "import shutil",
+      "template": "import shutil",
+      "description": "Import shutil for high-level file operations"
+    },
+    {
+      "type": "import",
+      "text": "Import pathlib",
+      "content": "from pathlib import Path",
+      "template": "from pathlib import Path",
+      "description": "Import Path for object-oriented path manipulation (Python 3.4+)"
+    },
+    {
+      "type": "directory",
+      "text": "Get Current Directory",
+      "content": "current_dir = os.getcwd()",
+      "template": "os.getcwd()",
+      "description": "Get the current working directory"
+    },
+    {
+      "type": "directory",
+      "text": "Change Directory",
+      "content": "os.chdir('/path/to/directory')",
+      "template": "os.chdir({path})",
+      "description": "Change the current working directory"
+    },
+    {
+      "type": "directory",
+      "text": "List Directory Contents",
+      "content": "files = os.listdir('.')",
+      "template": "os.listdir({path})",
+      "description": "List all files and directories in the specified path"
+    },
+    {
+      "type": "directory",
+      "text": "Create Directory",
+      "content": "os.mkdir('new_directory')",
+      "template": "os.mkdir({dir_name})",
+      "description": "Create a new directory"
+    },
+    {
+      "type": "directory",
+      "text": "Create Directories Recursively",
+      "content": "os.makedirs('path/to/new/directory', exist_ok=True)",
+      "template": "os.makedirs({path}, exist_ok=True)",
+      "description": "Create directories recursively, including parent directories"
+    },
+    {
+      "type": "directory",
+      "text": "Remove Directory",
+      "content": "os.rmdir('empty_directory')",
+      "template": "os.rmdir({dir_name})",
+      "description": "Remove an empty directory"
+    },
+    {
+      "type": "file",
+      "text": "Check if File Exists",
+      "content": "exists = os.path.exists('file.txt')",
+      "template": "os.path.exists({file_path})",
+      "description": "Check if a file or directory exists"
+    },
+    {
+      "type": "file",
+      "text": "Check if it's a File",
+      "content": "is_file = os.path.isfile('file.txt')",
+      "template": "os.path.isfile({path})",
+      "description": "Check if the path is a file"
+    },
+    {
+      "type": "file",
+      "text": "Check if it's a Directory",
+      "content": "is_dir = os.path.isdir('directory')",
+      "template": "os.path.isdir({path})",
+      "description": "Check if the path is a directory"
+    },
+    {
+      "type": "file",
+      "text": "Get File Size",
+      "content": "size = os.path.getsize('file.txt')",
+      "template": "os.path.getsize({file_path})",
+      "description": "Get the size of a file in bytes"
+    },
+    {
+      "type": "file",
+      "text": "Remove File",
+      "content": "os.remove('file.txt')",
+      "template": "os.remove({file_path})",
+      "description": "Remove (delete) a file"
+    },
+    {
+      "type": "file",
+      "text": "Rename/Move File",
+      "content": "os.rename('old_name.txt', 'new_name.txt')",
+      "template": "os.rename({old_path}, {new_path})",
+      "description": "Rename or move a file/directory"
+    },
+    {
+      "type": "path",
+      "text": "Join Paths",
+      "content": "full_path = os.path.join('folder', 'subfolder', 'file.txt')",
+      "template": "os.path.join({path1}, {path2})",
+      "description": "Join path components intelligently for current OS"
+    },
+    {
+      "type": "path",
+      "text": "Get Absolute Path",
+      "content": "abs_path = os.path.abspath('relative/path.txt')",
+      "template": "os.path.abspath({path})",
+      "description": "Get the absolute path of a file or directory"
+    },
+    {
+      "type": "path",
+      "text": "Get Directory Name",
+      "content": "dir_name = os.path.dirname('/path/to/file.txt')",
+      "template": "os.path.dirname({path})",
+      "description": "Get the directory name from a path"
+    },
+    {
+      "type": "path",
+      "text": "Get Base Name",
+      "content": "base_name = os.path.basename('/path/to/file.txt')",
+      "template": "os.path.basename({path})",
+      "description": "Get the file name from a path"
+    },
+    {
+      "type": "path",
+      "text": "Split Path",
+      "content": "dir_name, file_name = os.path.split('/path/to/file.txt')",
+      "template": "os.path.split({path})",
+      "description": "Split path into directory and file name"
+    },
+    {
+      "type": "path",
+      "text": "Split Extension",
+      "content": "name, ext = os.path.splitext('file.txt')",
+      "template": "os.path.splitext({file_path})",
+      "description": "Split file name and extension"
+    },
+    {
+      "type": "shutil",
+      "text": "Copy File",
+      "content": "shutil.copy('source.txt', 'destination.txt')",
+      "template": "shutil.copy({src}, {dst})",
+      "description": "Copy a file to another location"
+    },
+    {
+      "type": "shutil",
+      "text": "Copy Directory Tree",
+      "content": "shutil.copytree('source_dir', 'dest_dir')",
+      "template": "shutil.copytree({src}, {dst})",
+      "description": "Copy an entire directory tree recursively"
+    },
+    {
+      "type": "shutil",
+      "text": "Remove Directory Tree",
+      "content": "shutil.rmtree('directory')",
+      "template": "shutil.rmtree({path})",
+      "description": "Remove an entire directory tree (even if not empty)"
+    },
+    {
+      "type": "shutil",
+      "text": "Move File/Directory",
+      "content": "shutil.move('old_location', 'new_location')",
+      "template": "shutil.move({src}, {dst})",
+      "description": "Move a file or directory to another location"
+    },
+    {
+      "type": "environment",
+      "text": "Get Environment Variable",
+      "content": "home = os.environ.get('HOME')",
+      "template": "os.environ.get({var_name})",
+      "description": "Get the value of an environment variable"
+    },
+    {
+      "type": "environment",
+      "text": "Set Environment Variable",
+      "content": "os.environ['MY_VAR'] = 'value'",
+      "template": "os.environ[{var_name}] = {value}",
+      "description": "Set an environment variable (for current process)"
+    },
+    {
+      "type": "system",
+      "text": "Execute Shell Command",
+      "content": "result = os.system('ls -la')",
+      "template": "os.system({command})",
+      "description": "Execute a shell command (returns exit code)"
+    },
+    {
+      "type": "system",
+      "text": "Run Command with Output",
+      "content": "output = os.popen('ls').read()",
+      "template": "os.popen({command}).read()",
+      "description": "Run a command and capture its output"
+    },
+    {
+      "type": "system",
+      "text": "Get OS Name",
+      "content": "system_name = os.name",
+      "template": "os.name",
+      "description": "Get the operating system name (posix, nt, java)"
+    },
+    {
+      "type": "pathlib",
+      "text": "Create Path Object",
+      "content": "p = Path('/home/user/file.txt')",
+      "template": "Path({path_string})",
+      "description": "Create a Path object for path manipulation"
+    },
+    {
+      "type": "pathlib",
+      "text": "Read File",
+      "content": "content = Path('file.txt').read_text()",
+      "template": "Path({file_path}).read_text()",
+      "description": "Read text from a file using pathlib"
+    },
+    {
+      "type": "pathlib",
+      "text": "Write File",
+      "content": "Path('file.txt').write_text('content')",
+      "template": "Path({file_path}).write_text({content})",
+      "description": "Write text to a file using pathlib"
+    },
+    {
+      "type": "pathlib",
+      "text": "Iterate Over Files",
+      "content": "for file in Path('.').glob('*.txt'):\n    print(file)",
+      "template": "Path({path}).glob({pattern})",
+      "description": "Iterate over files matching a pattern"
+    },
+    {
+      "type": "walk",
+      "text": "Walk Directory Tree",
+      "content": "for root, dirs, files in os.walk('.'):\n    for file in files:\n        print(os.path.join(root, file))",
+      "template": "os.walk({directory})",
+      "description": "Recursively traverse a directory tree"
+    },
+    {
+      "type": "temp",
+      "text": "Create Temp File",
+      "content": "import tempfile\nwith tempfile.NamedTemporaryFile() as tmp:\n    tmp.write(b'data')",
+      "template": "tempfile.NamedTemporaryFile()",
+      "description": "Create a temporary file"
+    },
+    {
+      "type": "temp",
+      "text": "Create Temp Directory",
+      "content": "import tempfile\ntemp_dir = tempfile.mkdtemp()",
+      "template": "tempfile.mkdtemp()",
+      "description": "Create a temporary directory"
+    },
+    {
+      "type": "variable",
+      "text": "Path Separator",
+      "content": "separator = os.sep",
+      "template": "os.sep",
+      "description": "Get the OS-specific path separator"
+    },
+    {
+      "type": "variable",
+      "text": "Path Component Separator",
+      "content": "path_sep = os.pathsep",
+      "template": "os.pathsep",
+      "description": "Get the OS-specific path component separator (e.g., ':' or ';')"
+    },
+    {
+      "type": "variable",
+      "text": "Line Separator",
+      "content": "newline = os.linesep",
+      "template": "os.linesep",
+      "description": "Get the OS-specific line separator"
+    }
+  ]
+}
