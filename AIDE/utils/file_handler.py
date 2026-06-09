@@ -6,14 +6,32 @@ from core.code_block import CodeBlock
 class FileHandler:
     def __init__(self, app):
         self.app = app
+        self.last_save_path = None
 
     def save_project(self):
-        """保存项目到文件（包含折点）"""
+        """Save project directly to projects folder without dialog - uses project name"""
         project_dir = "projects"
         if not os.path.exists(project_dir):
             os.makedirs(project_dir)
 
-        # 通过 app 访问主应用的方法和属性
+        # Check if file with same name exists
+        save_path = os.path.join(project_dir, f"{self.app.project_name}.aide")
+        
+        if os.path.exists(save_path):
+            # File exists, call save_project_as
+            self.save_project_as()
+            return
+
+        # Save directly without asking
+        self._do_save(save_path)
+
+    def save_project_as(self):
+        """Save project with dialog (original save functionality)"""
+        project_dir = "projects"
+        if not os.path.exists(project_dir):
+            os.makedirs(project_dir)
+
+        # Through app access main app's methods and properties
         save_data = {
             "project_name": self.app.project_name,
             "blocks": {bid: block.to_dict() for bid, block in self.app.blocks.items()},
@@ -26,18 +44,37 @@ class FileHandler:
 
         filename = filedialog.asksaveasfilename(
             initialdir=project_dir,
-            defaultextension=".onsp",
-            filetypes=[("ONSPproject", "*.onsp"), ("All Files", "*.*")],
-            initialfile=f"{self.app.project_name}.onsp"
+            defaultextension=".aide",
+            filetypes=[("AIDE project", "*.aide"), ("All Files", "*.*")],
+            initialfile=f"{self.app.project_name}.aide"
         )
 
         if filename:
-            try:
-                with open(filename, 'w') as f:
-                    json.dump(save_data, f, indent=2)
-                messagebox.showinfo("Save Successful", f"Project saved to {filename}")
-            except Exception as e:
-                messagebox.showerror("Save Error", f"Could not save project: {e}")
+            self._do_save(filename)
+
+    def _do_save(self, filename):
+        """Perform the actual save operation"""
+        project_dir = "projects"
+        if not os.path.exists(project_dir):
+            os.makedirs(project_dir)
+
+        save_data = {
+            "project_name": self.app.project_name,
+            "blocks": {bid: block.to_dict() for bid, block in self.app.blocks.items()},
+            "block_counter": self.app.block_counter,
+            "sequence_lines": self.app.sequence_lines,
+            "end_lines": self.app.end_lines,
+            "continue_lines": self.app.continue_lines,
+            "polyline_points": {f"{s},{e}": points for (s, e), points in self.app.polyline_points.items()}
+        }
+
+        try:
+            with open(filename, 'w') as f:
+                json.dump(save_data, f, indent=2)
+            self.last_save_path = filename
+            messagebox.showinfo("Save Successful", f"Project saved to {filename}")
+        except Exception as e:
+            messagebox.showerror("Save Error", f"Could not save project: {e}")
 
     def import_project(self):
         """导入保存的项目（包含折点）"""
@@ -47,8 +84,8 @@ class FileHandler:
 
         filename = filedialog.askopenfilename(
             initialdir=project_dir,
-            defaultextension=".onsp",
-            filetypes=[("ONSPproject", "*.onsp"), ("All Files", "*.*")]
+            defaultextension=".aide",
+            filetypes=[("AIDE project", "*.aide"), ("All Files", "*.*")]
         )
 
         if filename:
@@ -68,7 +105,7 @@ class FileHandler:
                 self.app.project_name = load_data.get("project_name", self.app.lang.get("untitled_project"))
                 
                 # 更新窗口标题
-                self.app.root.title(f"OurNotepad - {self.app.project_name}")
+                self.app.root.title(f"AntimonyIDE - {self.app.project_name}")
 
                 # 加载块
                 blocks_data = load_data.get("blocks", {})
