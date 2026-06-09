@@ -20,7 +20,7 @@ from utils.block_loader import BlockLoader
 from utils.file_handler import FileHandler
 from plugins.code_pack_plugin import CodePackBlock, show_code_pack_editor, register_plugin
 CODE_PACK_PLUGIN_AVAILABLE = True
-class OurNotepadBuilder:
+class AntimonyIDEBuilder:
     def __init__(self, root):
         self.root = root
         self.lang = LanguageManager()
@@ -129,16 +129,10 @@ class OurNotepadBuilder:
                              command=self.import_project)
         file_menu.add_command(label="Save Project", accelerator="Ctrl+S",
                              command=self.save_project)
+        file_menu.add_command(label="Save Project As",
+                             command=self.save_project_as)
         file_menu.add_separator()
 
-        file_menu.add_command(label="Load Code File", accelerator="Ctrl+L",
-                              command=self.load_code_file)
-        file_menu.add_separator()
-
-        file_menu.add_command(label="Export Code", accelerator="Ctrl+E",
-                             command=self.export_code)
-        file_menu.add_separator()
-        
         file_menu.add_command(label="Rename Project...",
                              command=self.edit_project_name_menu)
         file_menu.add_separator()
@@ -161,7 +155,7 @@ class OurNotepadBuilder:
         edit_menu.add_command(label="Set End Block", accelerator="Ctrl+X",
                              command=lambda: self.start_end_connection() 
                              if self.selected_block_id else None)
-        edit_menu.add_command(label="Continue Line", accelerator="Ctrl+W",
+        edit_menu.add_command(label="Insert Line", accelerator="Ctrl+W",
                              command=lambda: self.start_continue_connection() 
                              if self.selected_block_id else None)
         edit_menu.add_separator()
@@ -181,20 +175,6 @@ class OurNotepadBuilder:
         self.view_menu.add_checkbutton(label="Show Block Editor", 
                                        variable=self.show_block_editor_var,
                                        command=self.toggle_block_editor)
-        self.view_menu.add_separator()
-        
-        # Language mode
-        self.prog_mode_var = tk.StringVar(value=self.lang_mode.current_mode)
-        prog_mode_menu = tk.Menu(self.view_menu, tearoff=0)
-        for mode in self.lang_mode.get_all_modes():
-            mode_info = self.lang_mode.get_mode_info(mode)
-            prog_mode_menu.add_radiobutton(
-                label=mode_info["name"],
-                command=lambda m=mode: self.change_programming_mode(m),
-                variable=self.prog_mode_var,
-                value=mode
-            )
-        self.view_menu.add_cascade(label="Programming Language", menu=prog_mode_menu)
         
         menubar.add_cascade(label="View", menu=self.view_menu)
 
@@ -204,6 +184,11 @@ class OurNotepadBuilder:
                               command=self.open_package_creator)
         tools_menu.add_command(label="Import Package",
                               command=self.import_package)
+        tools_menu.add_separator()
+        tools_menu.add_command(label="Save as Pack",
+                              command=self.save_as_pack)
+        tools_menu.add_command(label="Use Pack",
+                              command=self.use_pack)
         tools_menu.add_separator()
         tools_menu.add_command(label="Generate Code", accelerator="F5",
                               command=self.export_code)
@@ -216,7 +201,7 @@ class OurNotepadBuilder:
         help_menu = tk.Menu(menubar, tearoff=0)
         help_menu.add_command(label="Help Contents", accelerator="F1",
                              command=self.show_help)
-        help_menu.add_command(label="About OurNotepad",
+        help_menu.add_command(label="About AntimonyIDE",
                              command=self.show_about)
         
         menubar.add_cascade(label="Help", menu=help_menu)
@@ -315,7 +300,7 @@ class OurNotepadBuilder:
 
             # 设置项目名称为文件名
             self.project_name = os.path.basename(filename)
-            self.root.title(f"OurNotepad - {self.project_name}")
+            self.root.title(f"AntimonyIDE - {self.project_name}")
 
             # 在画布上放置代码块（每行一个）
             start_x = 100
@@ -388,7 +373,7 @@ class OurNotepadBuilder:
         if new_name and new_name.strip():
             self.project_name = new_name.strip()
             # Update window title
-            self.root.title(f"OurNotepad - {self.project_name}")
+            self.root.title(f"AntimonyIDE - {self.project_name}")
 
     def toggle_block_library(self):
         """Toggle visibility of block library - 改进：画布自动扩展"""
@@ -406,7 +391,7 @@ class OurNotepadBuilder:
 
                 # 更新窗口标题
                 mode_info = self.lang_mode.get_mode_info()
-                self.root.title(f"OurNotepad - {self.project_name} [{mode_info['name']}] - Code Library Hidden")
+                self.root.title(f"AntimonyIDE - {self.project_name} [{mode_info['name']}] - Code Library Hidden")
             else:
                 # 显示左侧框架
                 self.left_frame.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
@@ -420,7 +405,7 @@ class OurNotepadBuilder:
 
                 # 恢复窗口标题
                 mode_info = self.lang_mode.get_mode_info()
-                self.root.title(f"OurNotepad - {self.project_name} [{mode_info['name']}]")
+                self.root.title(f"AntimonyIDE - {self.project_name} [{mode_info['name']}]")
 
             # 更新画布网格以适应新的大小
             self.draw_grid()
@@ -443,7 +428,7 @@ class OurNotepadBuilder:
 
             # 更新窗口标题
             mode_info = self.lang_mode.get_mode_info()
-            self.root.title(f"OurNotepad - {self.project_name} [{mode_info['name']}] - Block Editor Hidden")
+            self.root.title(f"AntimonyIDE - {self.project_name} [{mode_info['name']}] - Block Editor Hidden")
         else:
             # 显示右侧编辑器
             self.right_frame.grid(row=0, column=2, sticky="nsew", padx=5, pady=5)
@@ -457,7 +442,7 @@ class OurNotepadBuilder:
 
             # 恢复窗口标题
             mode_info = self.lang_mode.get_mode_info()
-            self.root.title(f"OurNotepad - {self.project_name} [{mode_info['name']}]")
+            self.root.title(f"AntimonyIDE - {self.project_name} [{mode_info['name']}]")
 
         # 更新画布网格以适应新的大小
         self.draw_grid()
@@ -499,7 +484,7 @@ class OurNotepadBuilder:
             mode_info = self.lang_mode.get_mode_info(mode)
 
             # Update window title
-            self.root.title(f"OurNotepad - {self.project_name} [{mode_info['name']}]")
+            self.root.title(f"AntimonyIDE - {self.project_name} [{mode_info['name']}]")
 
             # Update blocks for the new language
             self.update_blocks_for_language(mode)
@@ -590,7 +575,13 @@ class OurNotepadBuilder:
         print(f"Available categories: {list(self.block_loader.available_blocks.keys())}")
 
     def show_about(self):
-        pass
+        """Show about dialog for AntimonyIDE"""
+        messagebox.showinfo("About AntimonyIDE",
+                          "AntimonyIDE\n"
+                          "A visual block-based programming environment\n"
+                          "Version 1.0\n\n"
+                          "Create programs using visual blocks\n"
+                          "Supports multiple programming languages")
 
     def run_exported_code(self):
         """Run the last exported code"""
@@ -2461,7 +2452,7 @@ class OurNotepadBuilder:
         
         # Reset project name
         self.project_name = self.lang.get("untitled_project")
-        self.root.title(f"OurNotepad - {self.project_name}")
+        self.root.title(f"AntimonyIDE - {self.project_name}")
         
         # Clear canvas
         if hasattr(self, 'canvas'):
@@ -2472,8 +2463,12 @@ class OurNotepadBuilder:
         self.deselect_all()
     
     def save_project(self):
-        """Save the project to a file"""
-        self.file_handler.save_project()
+        """Save the project to a file - Save as functionality"""
+        self.file_handler.save_project_as()
+    
+    def save_project_as(self):
+        """Save project with a new name - calls the original save dialog"""
+        self.file_handler.save_project_as()
     
     def import_project(self):
         """Import a saved project"""
@@ -2587,7 +2582,7 @@ class OurNotepadBuilder:
         
         # Generate code
         code_lines = []
-        code_lines.append(f"# Code generated from OurNotepad project: {self.project_name}")
+        code_lines.append(f"# Code generated from AntimonyIDE project: {self.project_name}")
         code_lines.append("# Generated on: " + time.strftime("%Y-%m-%d %H:%M:%S"))
         code_lines.append("")
         
@@ -2759,61 +2754,117 @@ class OurNotepadBuilder:
         scrollbar.config(command=text_widget.yview)
 
     def import_package(self):
-        """Import a package JSON file and add its blocks"""
-        # Ask for JSON file
-        filename = filedialog.askopenfilename(
-            defaultextension=".json",
-            filetypes=[("JSON Files", "*.json"), ("All Files", "*.*")],
-            title="Select Package JSON File"
-        )
-
-        if not filename:
-            return
-
-        try:
-            # Ask user for category name (default is filename without extension)
-            default_category = os.path.basename(filename).replace('.json', '')
-            category_name = simpledialog.askstring(
-                "Package Category",
-                f"Enter category name for this package:",
-                initialvalue=default_category
-            )
-
-            if not category_name:  # User cancelled
+        """Import package(s) from packages folder with a dialog window"""
+        import glob
+        
+        # Get list of JSON files in packages folder
+        packages_dir = "packages"
+        if not os.path.exists(packages_dir):
+            os.makedirs(packages_dir)
+        
+        json_files = glob.glob(os.path.join(packages_dir, "*.json"))
+        
+        # Create a dialog window with listbox
+        dialog = tk.Toplevel(self.root)
+        dialog.title("Import Package")
+        dialog.geometry("400x300")
+        dialog.transient(self.root)
+        dialog.grab_set()
+        
+        # Label
+        tk.Label(dialog, text="Select package(s) to import:").pack(pady=10)
+        
+        # Listbox with multi-select
+        listbox_frame = tk.Frame(dialog)
+        listbox_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=5)
+        
+        listbox = tk.Listbox(listbox_frame, selectmode=tk.MULTIPLE)
+        scrollbar = tk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
+        listbox.configure(yscrollcommand=scrollbar.set)
+        
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        # Populate listbox with package names
+        for json_file in json_files:
+            listbox.insert(tk.END, os.path.basename(json_file))
+        
+        selected_files = []
+        
+        def load_selected():
+            """Load selected package files"""
+            indices = listbox.curselection()
+            if not indices:
+                messagebox.showwarning("No Selection", "Please select at least one package.")
                 return
-
-            # Use BlockLoader's new method to import package
-            added_count, actual_category = self.block_loader.add_custom_package(filename, category_name)
-
-            if added_count > 0:
-                # Update blocks list
+            
+            imported_count = 0
+            for idx in indices:
+                filename = os.path.join(packages_dir, listbox.get(idx))
+                try:
+                    default_category = os.path.basename(filename).replace('.json', '')
+                    category_name = simpledialog.askstring(
+                        "Package Category",
+                        f"Enter category name for {os.path.basename(filename)}:",
+                        initialvalue=default_category
+                    )
+                    
+                    if category_name:
+                        added_count, actual_category = self.block_loader.add_custom_package(filename, category_name)
+                        if added_count > 0:
+                            imported_count += added_count
+                except Exception as e:
+                    messagebox.showerror("Import Error", f"Could not import {filename}:\n{str(e)}")
+            
+            if imported_count > 0:
                 self.update_blocks_list()
-
-                # Update category dropdown if it exists
                 if hasattr(self, 'category_dropdown'):
-                    # Refresh category list
                     categories = [self.lang.get("blocks_all")]
                     for category in self.block_loader.available_blocks.keys():
                         categories.append(category)
                     self.category_dropdown['values'] = categories
-
-                    # Show success message
-                    messagebox.showinfo(
-                        "Package Imported",
-                        f"Successfully imported {added_count} block(s).\n"
-                        f"Added to category: '{actual_category}'"
-                    )
-                else:
-                    messagebox.showinfo(
-                        "No New Blocks",
-                        "No new blocks were added. All blocks already exist."
-                    )
-
-        except Exception as e:
-            messagebox.showerror(
-                "Import Error",
-                f"Could not import package:\n{str(e)}"
+                messagebox.showinfo("Import Complete", f"Successfully imported {imported_count} block(s).")
+            
+            dialog.destroy()
+        
+        def browse_external():
+            """Browse for external JSON files and copy to packages folder"""
+            filenames = filedialog.askopenfilenames(
+                defaultextension=".json",
+                filetypes=[("JSON Files", "*.json"), ("All Files", "*.*")],
+                title="Select Package JSON Files"
             )
+            
+            if filenames:
+                copied_count = 0
+                for filename in filenames:
+                    dest = os.path.join(packages_dir, os.path.basename(filename))
+                    try:
+                        import shutil
+                        shutil.copy2(filename, dest)
+                        copied_count += 1
+                    except Exception as e:
+                        messagebox.showerror("Copy Error", f"Could not copy {filename}:\n{str(e)}")
+                
+                if copied_count > 0:
+                    # Refresh listbox
+                    listbox.delete(0, tk.END)
+                    json_files = glob.glob(os.path.join(packages_dir, "*.json"))
+                    for json_file in json_files:
+                        listbox.insert(tk.END, os.path.basename(json_file))
+                    messagebox.showinfo("Copy Complete", f"Copied {copied_count} file(s) to packages folder.")
+        
+        # Buttons
+        btn_frame = tk.Frame(dialog)
+        btn_frame.pack(pady=10)
+        
+        tk.Button(btn_frame, text="Load Selected", command=load_selected).pack(side=tk.LEFT, padx=5)
+        tk.Button(btn_frame, text="Browse External...", command=browse_external).pack(side=tk.LEFT, padx=5)
+        tk.Button(btn_frame, text="Cancel", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
+        
+        # Update blocks list after import
+        if hasattr(self, 'update_blocks_list'):
+            self.update_blocks_list()
     
     # ===== Package Creator Methods =====
 
